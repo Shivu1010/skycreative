@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background: #f4f4f4;
+}
+
+.top-navbar {
+    height: 54px;
+    background: #2c2d30;
+    border-bottom: 1px solid #3c3d41;
+}
+
+.brand-mark {
+    width: 10px;
+    height: 10px;
+    background: #79c54a;
+    border-radius: 1px;
+    display: inline-block;
+    transform: rotate(45deg);
+}
+
+.brand-text {
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.brand-text span {
+    color: #b8b8b8;
+    font-weight: 500;
+}
+
+.buy-btn {
+    background: #7fbe45;
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-width: 88px;
+    padding: 7px 14px;
+}
+
+.hero {
+    margin-top: 54px;
+    min-height: calc(100vh - 54px);
+    position: relative;
+    color: #fff;
+    background:
+        linear-gradient(rgba(18, 23, 31, 0.72), rgba(18, 23, 31, 0.72)),
+        url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80")
+        center/cover no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 16.66% 100%;
+    pointer-events: none;
+}
+
+.hero-nav {
+    position: relative;
+    z-index: 2;
+    padding: 16px 3.8vw;
+}
+
+.vedio-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.vedio-logo .o {
+    color: #ff7a1a;
+}
+
+.center-menu {
+    display: flex;
+    gap: clamp(14px, 1.8vw, 34px);
+    justify-content: center;
+}
+
+.center-menu a {
+    color: #fff;
+    opacity: 0.88;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.center-menu a.active,
+.center-menu a:hover {
+    opacity: 1;
+}
+
+.menu-circle {
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    min-height: calc(100vh - 150px);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 30px 16px 90px;
+}
+
+.hero-kicker {
+    margin: 0 0 12px;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.hero-title {
+    margin: 0;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+}
+
+.breadcrumb-mini {
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.breadcrumb-mini a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.breadcrumb-mini .sep {
+    opacity: 0.8;
+}
+
+.content-block {
+    min-height: 320px;
+    background: #fff;
+}
+
+@media (max-width: 991px) {
+    .hero-nav {
+        row-gap: 14px;
+    }
+
+    .center-menu {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .top-navbar {
+        height: 50px;
+    }
+
+    .hero {
+        margin-top: 50px;
+        min-height: calc(100vh - 50px);
+    }
+
+    .vedio-logo {
+        font-size: 2rem;
+    }
+
+    .menu-circle {
+        width: 46px;
+        height: 46px;
+    }
+
+    .hero-kicker {
+        font-size: 0.72rem;
+        letter-spacing: 2.2px;
+    }
+}

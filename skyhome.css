@@ -74,6 +74,7 @@ body {
     height: 30px;
     border: 0;
     background: transparent;
+    cursor: pointer;
     display: grid;
     grid-template-columns: repeat(2, 8px);
     grid-template-rows: repeat(2, 8px);
@@ -88,6 +89,11 @@ body {
     height: 8px;
     border: 2px solid #8f8f91;
     border-radius: 50%;
+    transition: border-color 0.2s ease;
+}
+
+body.menu-open .menu-dot-btn span {
+    border-color: #ff7a1a;
 }
 
 .side-label-wrap {
@@ -132,6 +138,62 @@ body {
     color: #ff7a1a;
 }
 
+.menu-overlay {
+    position: fixed;
+    top: 54px;
+    left: 72px;
+    width: min(72vw, 860px);
+    height: min(72vw, 860px);
+    background: #f96c1b;
+    border-radius: 50%;
+    z-index: 1020;
+    transform: translate(-65%, -45%) scale(0.92);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.menu-overlay-inner {
+    position: absolute;
+    top: 180px;
+    left: 110px;
+    width: min(65vw, 460px);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.menu-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: clamp(1.8rem, 2.8vw, 3.2rem);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 0.2px;
+}
+
+.menu-item i {
+    font-size: 1.25rem;
+}
+
+.menu-item.active {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+}
+
+.menu-item.no-chevron {
+    justify-content: flex-start;
+}
+
+body.menu-open .menu-overlay {
+    transform: translate(-47%, -36%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
 @media (max-width: 576px) {
     .top-navbar {
         height: 50px;
@@ -145,5 +207,23 @@ body {
 
     .side-label {
         font-size: 2.2rem;
+    }
+
+    .menu-overlay {
+        top: 50px;
+        left: 62px;
+        width: 115vw;
+        height: 115vw;
+    }
+
+    .menu-overlay-inner {
+        top: 150px;
+        left: 68px;
+        width: calc(100vw - 120px);
+        gap: 14px;
+    }
+
+    .menu-item {
+        font-size: clamp(1.55rem, 6vw, 2.2rem);
     }
 }

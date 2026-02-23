@@ -23,7 +23,7 @@
     </nav>
 
     <aside class="side-nav d-flex flex-column justify-content-between align-items-center">
-        <button class="menu-dot-btn" aria-label="Menu">
+        <button class="menu-dot-btn" aria-label="Menu" id="menuToggleBtn" aria-expanded="false" aria-controls="menuOverlay">
             <span></span><span></span><span></span><span></span>
         </button>
 
@@ -39,5 +39,26 @@
             <a href="#" aria-label="YouTube" class="social-link"><i class="bi bi-youtube"></i></a>
         </div>
     </aside>
+
+    <section class="menu-overlay" id="menuOverlay" aria-hidden="true">
+        <div class="menu-overlay-inner">
+            <a href="home.html" class="menu-item active">Home <i class="bi bi-chevron-down"></i></a>
+            <a href="about.html" class="menu-item">About Us <i class="bi bi-chevron-down"></i></a>
+            <a href="pages.html" class="menu-item">Pages <i class="bi bi-chevron-down"></i></a>
+            <a href="projects.html" class="menu-item">Projects <i class="bi bi-chevron-down"></i></a>
+            <a href="contact.html" class="menu-item no-chevron">Contact Us</a>
+        </div>
+    </section>
+
+    <script>
+        const menuToggleBtn = document.getElementById("menuToggleBtn");
+        const menuOverlay = document.getElementById("menuOverlay");
+
+        menuToggleBtn.addEventListener("click", function () {
+            const isOpen = document.body.classList.toggle("menu-open");
+            menuOverlay.setAttribute("aria-hidden", String(!isOpen));
+            menuToggleBtn.setAttribute("aria-expanded", String(isOpen));
+        });
+    </script>
 </body>
 </html>
