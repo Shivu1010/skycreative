@@ -142,12 +142,12 @@ body.menu-open .menu-dot-btn span {
     position: fixed;
     top: 54px;
     left: 72px;
-    width: min(72vw, 860px);
-    height: min(72vw, 860px);
+    width: min(96vw, 1120px);
+    height: min(96vw, 1120px);
     background: #f96c1b;
     border-radius: 50%;
     z-index: 1020;
-    transform: translate(-65%, -45%) scale(0.92);
+    transform: translate(-72%, -53%) scale(0.92);
     opacity: 0;
     pointer-events: none;
     transition: transform 0.35s ease, opacity 0.35s ease;
@@ -155,18 +155,18 @@ body.menu-open .menu-dot-btn span {
 
 .menu-overlay-inner {
     position: absolute;
-    top: 180px;
-    left: 110px;
-    width: min(65vw, 460px);
+    top: 230px;
+    left: 118px;
+    width: min(70vw, 520px);
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 22px;
 }
 
 .menu-item {
     color: #ffffff;
     text-decoration: none;
-    font-size: clamp(1.8rem, 2.8vw, 3.2rem);
+    font-size: clamp(2.2rem, 3.4vw, 3.7rem);
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -189,7 +189,7 @@ body.menu-open .menu-dot-btn span {
 }
 
 body.menu-open .menu-overlay {
-    transform: translate(-47%, -36%) scale(1);
+    transform: translate(-52%, -41%) scale(1);
     opacity: 1;
     pointer-events: auto;
 }
@@ -212,18 +212,18 @@ body.menu-open .menu-overlay {
     .menu-overlay {
         top: 50px;
         left: 62px;
-        width: 115vw;
-        height: 115vw;
+        width: 128vw;
+        height: 128vw;
     }
 
     .menu-overlay-inner {
-        top: 150px;
-        left: 68px;
-        width: calc(100vw - 120px);
-        gap: 14px;
+        top: 170px;
+        left: 58px;
+        width: calc(100vw - 102px);
+        gap: 16px;
     }
 
     .menu-item {
-        font-size: clamp(1.55rem, 6vw, 2.2rem);
+        font-size: clamp(1.95rem, 7vw, 2.6rem);
     }
 }

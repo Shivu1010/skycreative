@@ -170,6 +170,216 @@ body {
     background: #fff;
 }
 
+.map-section {
+    padding: 0;
+    min-height: 560px;
+}
+
+.map-frame {
+    width: 100%;
+    height: min(68vh, 620px);
+    border: 0;
+    display: block;
+}
+
+.contact-detail-wrap {
+    background: #ececec;
+    padding: 0 0 72px;
+}
+
+.contact-detail-grid {
+    margin-top: -92px;
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1320px;
+    padding: 0 22px;
+}
+
+.review-panel {
+    background: #ededed;
+    padding: 26px 60px 24px;
+}
+
+.review-item {
+    position: relative;
+    padding: 32px 0 34px;
+    border-bottom: 1px solid #dadada;
+}
+
+.review-item:last-child {
+    border-bottom: 0;
+}
+
+.review-item-second {
+    padding-bottom: 14px;
+}
+
+.review-stars {
+    margin: 0 0 14px;
+    color: #151515;
+    letter-spacing: 3px;
+    font-size: 1.05rem;
+}
+
+.review-text {
+    margin: 0 0 20px;
+    color: #1f1f1f;
+    font-size: 22px;
+    line-height: 1.38;
+    font-weight: 500;
+    max-width: 96%;
+}
+
+.review-author {
+    margin: 0;
+    color: #222;
+    font-size: 17px;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+}
+
+.review-author span {
+    color: #a8a8a8;
+}
+
+.quote-mark {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    width: 84px;
+    height: 84px;
+    border: 6px solid #e2e2e2;
+    border-radius: 4px;
+    opacity: 0.95;
+}
+
+.form-panel {
+    background: #202020;
+    color: #fff;
+    padding: 52px 58px 56px;
+}
+
+.request-form {
+    height: 100%;
+}
+
+.form-label-custom {
+    display: block;
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.23);
+}
+
+.form-control-custom {
+    border: 0;
+    border-bottom: 1px solid #404040;
+    border-radius: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 4px 0 10px;
+}
+
+.form-control-custom:focus {
+    background: transparent;
+    color: #fff;
+    box-shadow: none;
+    border-color: #575757;
+}
+
+.text-area-custom {
+    min-height: 245px;
+    resize: vertical;
+}
+
+.submit-btn-custom {
+    margin-top: 8px;
+    border: 0;
+    background: #f96c1b;
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 1.15rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.submit-btn-custom span {
+    font-size: 1.35rem;
+    line-height: 0;
+}
+
+.catch-section {
+    background: #ededed;
+    padding: 88px 0 110px;
+    font-size: 18px;
+}
+
+.catch-head {
+    margin-bottom: 58px;
+}
+
+.catch-kicker {
+    margin: 0 0 8px;
+    color: #f97316;
+    letter-spacing: 5px;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.catch-label {
+    margin: 0;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.catch-title {
+    margin: 10px 0 0;
+    color: #000;
+    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+    font-weight: 700;
+}
+
+.catch-cards {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.catch-card {
+    min-height: 330px;
+    border: 1px solid #d8d8d8;
+    background: transparent;
+    padding: 52px 34px 36px;
+}
+
+.catch-icon {
+    display: inline-block;
+    color: #f97316;
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 24px;
+}
+
+.catch-card h3 {
+    margin: 0 0 14px;
+    color: #000;
+    font-size: clamp(1.35rem, 1.8vw, 2rem);
+    font-weight: 700;
+}
+
+.catch-card p {
+    margin: 0 auto;
+    max-width: 95%;
+    color: #4b5563;
+    font-size: clamp(1.05rem, 1.2vw, 1.45rem);
+    line-height: 1.35;
+}
+
 @media (max-width: 991px) {
     .hero-nav {
         row-gap: 14px;
@@ -177,6 +387,63 @@ body {
 
     .center-menu {
         flex-wrap: wrap;
+    }
+
+    .contact-detail-grid {
+        margin-top: -70px;
+        grid-template-columns: 1fr;
+    }
+
+    .form-panel,
+    .review-panel {
+        padding: 28px 24px 32px;
+    }
+
+    .review-text {
+        font-size: 1.3rem;
+        max-width: 100%;
+    }
+
+    .review-author {
+        font-size: 0.95rem;
+    }
+
+    .form-label-custom {
+        font-size: 0.88rem;
+    }
+
+    .form-control-custom {
+        font-size: 1.12rem;
+    }
+
+    .text-area-custom {
+        min-height: 150px;
+    }
+
+    .catch-section {
+        padding: 72px 0 86px;
+    }
+
+    .catch-head {
+        margin-bottom: 36px;
+    }
+
+    .catch-card {
+        min-height: 285px;
+        padding: 36px 24px 26px;
+    }
+
+    .catch-icon {
+        font-size: 56px;
+        margin-bottom: 16px;
+    }
+
+    .catch-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .catch-card p {
+        font-size: 1rem;
     }
 }
 
@@ -202,5 +469,56 @@ body {
     .hero-kicker {
         font-size: 0.72rem;
         letter-spacing: 2.2px;
+    }
+
+    .map-section {
+        min-height: 420px;
+    }
+
+    .map-frame {
+        height: 420px;
+    }
+
+    .contact-detail-wrap {
+        padding-bottom: 54px;
+    }
+
+    .contact-detail-grid {
+        margin-top: -52px;
+    }
+
+    .review-text {
+        font-size: 1.14rem;
+    }
+
+    .submit-btn-custom {
+        width: 100%;
+        letter-spacing: 2px;
+        font-size: 0.94rem;
+    }
+
+    .catch-section {
+        padding: 60px 0 72px;
+    }
+
+    .catch-title {
+        font-size: 2rem;
+    }
+
+    .catch-card {
+        min-height: 258px;
+        padding: 28px 18px 24px;
+    }
+
+    .catch-icon {
+        font-size: 48px;
+    }
+
+    .catch-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .catch-card p {
+        font-size: 1rem;
     }
 }
