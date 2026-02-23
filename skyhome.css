@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background: #1b1d22;
+    min-height: 100vh;
+}
+
+.top-navbar {
+    height: 54px;
+    background: #2c2d30;
+    border-bottom: 1px solid #3c3d41;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1040;
+}
+
+.brand-mark {
+    width: 10px;
+    height: 10px;
+    background: #79c54a;
+    border-radius: 1px;
+    display: inline-block;
+    transform: rotate(45deg);
+}
+
+.brand-text {
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.2px;
+}
+
+.brand-text span {
+    color: #b8b8b8;
+    font-weight: 500;
+}
+
+.buy-btn {
+    background: #7fbe45;
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-width: 88px;
+    padding: 7px 14px;
+}
+
+.buy-btn:hover {
+    background: #74af3f;
+    color: #fff;
+}
+
+.side-nav {
+    position: fixed;
+    top: 54px;
+    left: 0;
+    width: 72px;
+    height: calc(100vh - 54px);
+    background: #181a1f;
+    border-right: 1px solid #2c2e34;
+    padding: 20px 0 18px;
+    z-index: 1030;
+}
+
+.menu-dot-btn {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: transparent;
+    display: grid;
+    grid-template-columns: repeat(2, 8px);
+    grid-template-rows: repeat(2, 8px);
+    gap: 6px;
+    padding: 0;
+    place-content: center;
+}
+
+.menu-dot-btn span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #8f8f91;
+    border-radius: 50%;
+}
+
+.side-label-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-label {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 2.65rem;
+    line-height: 1;
+}
+
+.side-circle {
+    position: absolute;
+    right: 6px;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ff7a1a;
+    border-radius: 50%;
+}
+
+.social-link {
+    color: #f2f2f2;
+    text-decoration: none;
+    opacity: 0.95;
+    line-height: 1;
+}
+
+.social-link i {
+    font-size: 18px;
+}
+
+.social-link:hover {
+    color: #ff7a1a;
+}
+
+@media (max-width: 576px) {
+    .top-navbar {
+        height: 50px;
+    }
+
+    .side-nav {
+        top: 50px;
+        width: 62px;
+        height: calc(100vh - 50px);
+    }
+
+    .side-label {
+        font-size: 2.2rem;
+    }
+}
