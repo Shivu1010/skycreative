@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="inner-pages.css">
     <link rel="stylesheet" href="footer.css">
 </head>
@@ -27,7 +28,9 @@
         <div class="hero-nav container-fluid">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-6">
-                    <a href="home.html" class="vedio-logo">VEDI<span class="o">O</span></a>
+                    <a href="home.html" class="vedio-logo" aria-label="Vedio Home">
+                        <img src="assets/logo-2_white.svg" alt="Vedio logo">
+                    </a>
                 </div>
                 <div class="col-lg-6 order-3 order-lg-2 col-12 mt-3 mt-lg-0">
                     <nav class="center-menu">
@@ -39,7 +42,9 @@
                     </nav>
                 </div>
                 <div class="col-lg-3 col-6 order-2 order-lg-3 d-flex justify-content-end ms-auto">
-                    <a href="skyhome.html" class="menu-circle"><i class="bi bi-list"></i></a>
+                    <button type="button" class="menu-circle" id="menuCircleBtn" aria-label="Open menu panel" aria-expanded="false" aria-controls="menuOffcanvas">
+                        <i class="bi bi-list"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -57,6 +62,41 @@
             <a href="contact.html">Contact Us</a>
         </div>
     </header>
+
+    <div class="menu-offcanvas-backdrop" id="menuBackdrop" hidden></div>
+    <aside class="menu-offcanvas" id="menuOffcanvas" aria-hidden="true">
+        <button type="button" class="menu-offcanvas-close" id="menuCloseBtn" aria-label="Close menu panel">
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+        <a href="home.html" class="vedio-logo" aria-label="Vedio Home">
+            <img src="assets/logo-2_black.svg" alt="Vedio logo">
+        </a>
+        <p class="menu-offcanvas-text">
+            Filmmaking is the process by which a motion picture is produced. Filmmaking involves a number of complex
+            and discrete stages, starting with an initial story. Our business is one of the largest of its kind as an
+            video agency for this good service.
+        </p>
+
+        <img
+            class="menu-offcanvas-image"
+            src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?auto=format&fit=crop&w=900&q=80"
+            alt="Creative team in production setup"
+        >
+
+        <div class="menu-offcanvas-contact">
+            <p><i class="bi bi-geo-alt-fill"></i>21/A, Booston Apt. 692 Los Vhikari, US</p>
+            <p><i class="bi bi-envelope-fill"></i>info@vidiox.com</p>
+            <p><i class="bi bi-telephone-fill"></i>+777 (45) 000 66</p>
+        </div>
+
+        <div class="menu-offcanvas-social">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+    </aside>
 
     <section class="content-block map-section">
         <iframe
@@ -149,7 +189,9 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-5">
-                    <h3 class="footer-logo">VEDI<span class="o">O</span></h3>
+                    <a href="home.html" class="footer-logo" aria-label="Vedio Home">
+                        <img src="assets/logo-2_white.svg" alt="Vedio logo">
+                    </a>
                     <p class="footer-about">Filmmaking is the process by which a motion picture is produced. It's involves a number of complex and discrete stages, starting with an initial story.</p>
                     <a href="#" class="footer-quote">GET A QUOTE</a>
                 </div>
@@ -193,5 +235,39 @@
             <div class="footer-bottom">Copyright &amp; Design By @Vedio - 2023</div>
         </div>
     </footer>
+
+    <script>
+        const menuCircleBtn = document.getElementById("menuCircleBtn");
+        const menuOffcanvas = document.getElementById("menuOffcanvas");
+        const menuCloseBtn = document.getElementById("menuCloseBtn");
+        const menuBackdrop = document.getElementById("menuBackdrop");
+
+        function setMenuState(isOpen) {
+            document.body.classList.toggle("menu-panel-open", isOpen);
+            menuOffcanvas.classList.toggle("open", isOpen);
+            menuOffcanvas.setAttribute("aria-hidden", String(!isOpen));
+            menuCircleBtn.setAttribute("aria-expanded", String(isOpen));
+            menuBackdrop.hidden = !isOpen;
+        }
+
+        menuCircleBtn.addEventListener("click", function () {
+            const isOpen = menuOffcanvas.classList.contains("open");
+            setMenuState(!isOpen);
+        });
+
+        menuCloseBtn.addEventListener("click", function () {
+            setMenuState(false);
+        });
+
+        menuBackdrop.addEventListener("click", function () {
+            setMenuState(false);
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                setMenuState(false);
+            }
+        });
+    </script>
 </body>
 </html>

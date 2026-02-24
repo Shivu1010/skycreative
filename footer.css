@@ -27,10 +27,27 @@
 
 .footer-about {
     margin: 0 0 28px;
-    max-width: 360px;
+    max-width: 380px;
     color: #cfcfcf;
     font-size: 14px;
     line-height: 1.55;
+}
+
+/* When logo is an image */
+.footer-logo img {
+    display: block;
+    max-width: 160px;
+    height: auto;
+    margin-bottom: 18px;
+}
+
+/* Make footer columns align like the design */
+.site-footer .row {
+    align-items: start;
+}
+
+.site-footer .col-lg-5 {
+    padding-right: 40px;
 }
 
 .footer-quote {
